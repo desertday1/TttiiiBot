@@ -24,7 +24,7 @@ jobs:
       - name: إعداد ملفات تسجيل الدخول
         run: |
           echo "password_file = None" >> user-config.py
-          echo "authenticate['ar.wikipedia.org'] = ('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" >> user-config.py
+          echo "authenticate['ar.wikipedia.org'] = ('TttiiiBot@TttiiiBot', 'b8up1hiff5mqak261khdppe4rvmcpetc')" >> user-config.py
 
       - name: تشغيل البوت لإصلاح النقولات
         run: python bot.py
