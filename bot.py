@@ -1,19 +1,8 @@
-import os
 import pywikibot
-from pywikibot.login import ClientLoginManager
 
 site = pywikibot.Site("ar", "wikipedia")
 
-username = os.environ["WIKI_USERNAME"]
-password = os.environ["WIKI_PASSWORD"]
-
-login_manager = ClientLoginManager(
-    site=site,
-    user=username,
-    password=password
-)
-
-login_manager.login()
+site.login()
 
 print("تم تسجيل الدخول بنجاح")
 print("الحساب:", site.username())
