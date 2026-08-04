@@ -2,9 +2,6 @@ import pywikibot
 
 site = pywikibot.Site("ar", "wikipedia")
 
-site.login()
-
-print("تم تسجيل الدخول بنجاح")
 print("الحساب المستخدم:", site.username())
 
 page = pywikibot.Page(site, "ويكيبيديا")
