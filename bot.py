@@ -2,8 +2,6 @@ import pywikibot
 from pywikibot.login import LoginManager
 import os
 
-site = pywikibot.Site("ar", "wikipedia")
-
 login_manager = LoginManager(
     password=os.environ["WIKI_PASSWORD"],
     username=os.environ["WIKI_USERNAME"],
