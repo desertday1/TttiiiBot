@@ -1,8 +1,12 @@
+import os
 import pywikibot
 
 site = pywikibot.Site("ar", "wikipedia")
 
-site.login()
+username = os.environ.get("WIKI_USERNAME")
+password = os.environ.get("WIKI_PASSWORD")
+
+site.login(password=password)
 
 print("تم تسجيل الدخول بنجاح")
 print("الحساب المستخدم:", site.username())
