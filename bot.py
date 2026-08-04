@@ -1,14 +1,19 @@
+import os
 import pywikibot
+
+username = os.environ["WIKI_USERNAME"]
+password = os.environ["WIKI_PASSWORD"]
 
 site = pywikibot.Site("ar", "wikipedia")
 
-site.login()
+site.login(user=username, password=password)
+
+print("تم تسجيل الدخول بنجاح")
 
 page = pywikibot.Page(site, "مستخدم:TttiiiBot/اختبار")
 
-text = "هذا تعديل تجريبي من بوت TttiiiBot.\n"
+page.text = "هذا تعديل تجريبي من بوت TttiiiBot.\n"
 
-page.text = text
 page.save("اختبار اتصال البوت وتعديلاته")
 
-print("تم حفظ الصفحة بنجاح")
+print("تم الحفظ")
