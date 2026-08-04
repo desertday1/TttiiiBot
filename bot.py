@@ -1,20 +1,13 @@
 import pywikibot
-from pywikibot.login import LoginManager
-import os
 
-login_manager = LoginManager(
-    password=os.environ["WIKI_PASSWORD"],
-    username=os.environ["WIKI_USERNAME"],
-    site=site
-)
+site = pywikibot.Site("ar", "wikipedia")
 
-login_manager.login()
+print("الحساب المستخدم:", site.username())
 
-print("تم تسجيل الدخول")
-print(site.username())
+page = pywikibot.Page(site, "ويكيبيديا")
 
-page = pywikibot.Page(site, "مستخدم:TttiiiBot/اختبار")
-
-page.text = "هذا تعديل تجريبي من بوت TttiiiBot."
-
-page.save("اختبار البوت")
+if page.exists():
+    print("تم العثور على الصفحة:")
+    print(page.title())
+else:
+    print("الصفحة غير موجودة")
