@@ -1,10 +1,6 @@
-import os
 import pywikibot
 
 site = pywikibot.Site("ar", "wikipedia")
-
-username = os.environ.get("WIKI_USERNAME")
-password = os.environ.get("WIKI_PASSWORD")
 
 site.login()
 
