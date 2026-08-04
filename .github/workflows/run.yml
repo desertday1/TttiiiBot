@@ -19,14 +19,10 @@ jobs:
       - name: تثبيت المكتبات
         run: pip install -r requirements.txt
 
-      - name: إنشاء user-config
+      - name: إنشاء ملف إعداد الدخول
         run: |
-          cat > user-config.py <<EOF
-          family = "wikipedia"
-          mylang = "ar"
-          usernames['wikipedia']['ar'] = 'TttiiiBot@TttiiiBot'
-          authenticate['ar.wikipedia.org'] = ('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')
-          EOF
+          echo "usernames['wikipedia']['ar'] = 'TttiiiBot@TttiiiBot'" > user-config.py
+          echo "authenticate['en.wikipedia.org'] = ('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" >> user-config.py
 
       - name: تشغيل البوت
         run: python bot.py
