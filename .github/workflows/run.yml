@@ -22,9 +22,9 @@ jobs:
       - name: إنشاء ملف إعداد الدخول
         run: |
           echo "usernames['wikipedia']['ar'] = 'TttiiiBot@TttiiiBot'" > user-config.py
-          echo "authenticate['en.wikipedia.org'] = ('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" >> user-config.py
-      - name: إنشاء ملف كلمة المرور
+          echo "authenticate['en.wikipedia.org'] = ('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" >> user-    
+      - name: إنشاء ملف user-password.py
         run: |
-          echo "('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" > passwords.py
+          echo "('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" > user-password.py
       - name: تشغيل البوت
         run: python bot.py
