@@ -27,4 +27,7 @@ jobs:
         run: |
           echo "('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" > user-password.py
       - name: تشغيل البوت
+        env:
+          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
+          WIKI_PASSWORD: ${{ secrets.WIKI_PASSWORD }}
         run: python bot.py
