@@ -4,13 +4,10 @@ site = pywikibot.Site("ar", "wikipedia")
 
 site.login()
 
-print("تم تسجيل الدخول بنجاح")
-print("الحساب:", site.username())
+print("تم تسجيل الدخول")
 
 page = pywikibot.Page(site, "مستخدم:TttiiiBot/اختبار")
 
-page.text = "هذا تعديل تجريبي من بوت TttiiiBot.\n"
+page.text = "هذا تعديل تجريبي من بوت TttiiiBot."
 
-page.save("اختبار اتصال البوت وتعديلاته")
-
-print("تم الحفظ بنجاح")
+page.save("اختبار البوت")
