@@ -23,6 +23,8 @@ jobs:
         run: |
           echo "usernames['wikipedia']['ar'] = 'TttiiiBot@TttiiiBot'" > user-config.py
           echo "authenticate['en.wikipedia.org'] = ('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" >> user-config.py
-
+      - name: إنشاء ملف كلمة المرور
+        run: |
+          echo "('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" > passwords.py
       - name: تشغيل البوت
         run: python bot.py
