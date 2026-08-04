@@ -4,10 +4,10 @@ site = pywikibot.Site("ar", "wikipedia")
 
 print("الحساب المستخدم:", site.username())
 
-page = pywikibot.Page(site, "ويكيبيديا")
+page = pywikibot.Page(site, "مستخدم:TttiiiBot/اختبار")
 
-if page.exists():
-    print("تم العثور على الصفحة:")
-    print(page.title())
-else:
-    print("الصفحة غير موجودة")
+page.text = "هذا اختبار تعديل من بوت TttiiiBot."
+
+page.save("اختبار تعديل البوت")
+
+print("تم التعديل بنجاح")
