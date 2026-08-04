@@ -21,10 +21,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: إعداد ملفات تسجيل الدخول
+      - name: توليد ملف الإعدادات والمصادقة الآمنة
         run: |
+          echo "family = 'wikipedia'" > user-config.py
+          echo "mylang = 'ar'" >> user-config.py
+          echo "usernames['wikipedia']['ar'] = 'TttiiiBot'" >> user-config.py
           echo "password_file = None" >> user-config.py
-          echo "authenticate['ar.wikipedia.org'] = ('TttiiiBot@TttiiiBot', 'b8up1hiff5mqak261khdppe4rvmcpetc')" >> user-config.py
+          echo "authenticate['ar.wikipedia.org'] = ('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" >> user-config.py
 
       - name: تشغيل البوت لإصلاح النقولات
         run: python bot.py
