@@ -19,8 +19,10 @@ jobs:
       - name: تثبيت المكتبات
         run: pip install -r requirements.txt
 
+      - name: إنشاء ملف إعداد الدخول
+        run: |
+          echo "usernames['wikipedia']['ar'] = 'TttiiiBot@TttiiiBot'" > user-config.py
+          echo "authenticate['en.wikipedia.org'] = ('TttiiiBot@TttiiiBot', '${{ secrets.WIKI_PASSWORD }}')" >> user-config.py
+
       - name: تشغيل البوت
-        env:
-          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
-          WIKI_PASSWORD: ${{ secrets.WIKI_PASSWORD }}
         run: python bot.py
