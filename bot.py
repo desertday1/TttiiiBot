@@ -1,10 +1,19 @@
 import pywikibot
+from pywikibot.login import LoginManager
+import os
 
 site = pywikibot.Site("ar", "wikipedia")
 
-site.login()
+login_manager = LoginManager(
+    password=os.environ["WIKI_PASSWORD"],
+    username=os.environ["WIKI_USERNAME"],
+    site=site
+)
+
+login_manager.login()
 
 print("تم تسجيل الدخول")
+print(site.username())
 
 page = pywikibot.Page(site, "مستخدم:TttiiiBot/اختبار")
 
